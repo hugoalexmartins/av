@@ -161,3 +161,11 @@ func PlanForAmend(
 	}
 	return ret, nil
 }
+
+func PlanSplit(
+	tx meta.ReadTx,
+	repo *git.Repo,
+	startRef plumbing.ReferenceName,
+) ([]sequencer.RestackOp, error) {
+	return PlanForRestack(tx, repo, startRef, false, true)
+}
