@@ -206,3 +206,17 @@ func ChildrenNames(tx ReadTx, name string) []string {
 	}
 	return children
 }
+
+// LastChildOf returns the last child of the tree
+func LastChildOf(tx ReadTx, name string) *Branch {
+	children := Children(tx, name)
+	if len(children) == 0 {
+		b, ok := tx.Branch(name)
+		if !ok {
+			return nil
+		}
+		return &b
+	}
+	return &children[len(children)-1]
+
+}
