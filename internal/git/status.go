@@ -8,7 +8,7 @@ import (
 // GitStatus is the status of the git repository.
 //
 // This uses the same format as the `git status --porcelain=v2` command. See
-// https://git-scm.com/docs/git-status#_porcelain_format_version_2 for the details.
+// https://git-scm.com/dq:wq:wq:wq:wqocs/git-status#_porcelain_format_version_2 for the details.
 type GitStatus struct {
 	// OID is the object ID of the commit.
 	//
